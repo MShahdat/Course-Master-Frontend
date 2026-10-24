@@ -11,7 +11,7 @@ export default function Navbar() {
     const [me, setMe] = useState(null);
 
     const navLinkClass = ({ isActive, to }) =>
-        (isActive || window.location.pathname.startsWith("/"))
+        isActive
             ? "text-primary font-semibold"
             : "text-base-content/80 hover:text-primary";
 
@@ -102,7 +102,7 @@ export default function Navbar() {
 
                             <ul
                                 tabIndex={0}
-                                className="dropdown-content mt-3 p-3 shadow bg-base-100 rounded-box w-60 border border-base-300"
+                                className="dropdown-content mt-3 p-3 shadow bg-base-100 rounded-box border border-base-300"
                             >
                                 <div className="px-2 pb-2">
                                     <p className="font-semibold">{me.name}</p>
