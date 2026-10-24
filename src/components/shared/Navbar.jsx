@@ -93,7 +93,7 @@ export default function Navbar() {
 
                     {/* Desktop avatar if logged in */}
                     {token && me && (
-                        <div className="hidden md:block dropdown dropdown-end">
+                        <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-9 rounded-full bg-primary text-primary-content flex items-center justify-center font-bold">
                                     {initials}
@@ -102,11 +102,11 @@ export default function Navbar() {
 
                             <ul
                                 tabIndex={0}
-                                className="dropdown-content mt-3 p-3 shadow bg-base-100 rounded-box border border-base-300"
+                                className="dropdown-content mt-3 w-64 max-w-[calc(100vw_-_3rem)] p-3 shadow bg-base-100 rounded-box border border-base-300 md:w-auto md:max-w-none"
                             >
                                 <div className="px-2 pb-2">
                                     <p className="font-semibold">{me.name}</p>
-                                    <p className="text-sm text-base-content/70">{me.email}</p>
+                                    <p className="text-sm text-base-content/70 break-all md:break-normal">{me.email}</p>
                                     <p className="text-xs badge badge-outline mt-2">{me.role}</p>
                                 </div>
 
@@ -161,6 +161,7 @@ export default function Navbar() {
                                 </li>
                             )}
 
+
                             <div className="my-2 w-full border-t border-base-300" />
 
                             {!token ? (
@@ -200,6 +201,7 @@ export default function Navbar() {
                                 </>
                             )}
                         </ul>
+
                     </div>
 
                 </div>
